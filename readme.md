@@ -1,5 +1,6 @@
 #Rest Gps.
 ---
+##Preparation
 To check the operation of applications, you need to install BD MySQL.
 Having opened the source code in IDEA and connected the database, 
 you need to execute SQL scripts **initDB.sql** and **populateDB.sql** 
