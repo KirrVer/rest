@@ -1,5 +1,4 @@
-#Rest Gps
-
+#Rest Gps.
 
 To check the operation of applications, you need to install BD MySQL.
 Having opened the source code in IDEA and connected the database, 
