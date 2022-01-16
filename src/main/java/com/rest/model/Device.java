@@ -1,12 +1,12 @@
 package com.rest.model;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "devices")
@@ -23,7 +23,7 @@ public class Device {
     @Column(name = "latitude")
     private int latitude;
     @Column(name = "longitude")
-    private  int longitude;
+    private int longitude;
 
 
 }

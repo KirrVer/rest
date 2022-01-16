@@ -1,18 +1,19 @@
 package com.rest.controller;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import com.rest.model.Device;
 import com.rest.service.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * rest controller
+ */
 @RestController
 @RequestMapping("/api/devices")
 public class DeviceRestController {
@@ -36,28 +37,30 @@ public class DeviceRestController {
     }
 
     @PostMapping(value = "")
-    public ResponseEntity<Device> saveDevice(@RequestBody @Validated Device device){
-        if (device == null){
+    public ResponseEntity<Device> saveDevice(@RequestBody @Validated Device device) {
+        if (device == null) {
             return new ResponseEntity<Device>(HttpStatus.BAD_REQUEST);
         }
         deviceService.save(device);
 
-        return new ResponseEntity<Device> (device, HttpStatus.CREATED);
+        return new ResponseEntity<Device>(device, HttpStatus.CREATED);
     }
+
     @PutMapping(value = "")
-    public ResponseEntity<Device> updateDevice(@RequestBody @Validated Device device){
-        if (device == null){
+    public ResponseEntity<Device> updateDevice(@RequestBody @Validated Device device) {
+        if (device == null) {
             return new ResponseEntity<Device>(HttpStatus.BAD_REQUEST);
         }
         deviceService.save(device);
 
         return new ResponseEntity<Device>(device, HttpStatus.OK);
     }
+
     @DeleteMapping(value = "{id}")
-    public ResponseEntity<Device> deleteDevice(@PathVariable("id") Integer id_device){
+    public ResponseEntity<Device> deleteDevice(@PathVariable("id") Integer id_device) {
         Device device = deviceService.getDevice(id_device);
 
-        if (device == null){
+        if (device == null) {
             return new ResponseEntity<Device>(HttpStatus.NOT_FOUND);
         }
 
@@ -67,10 +70,10 @@ public class DeviceRestController {
     }
 
     @GetMapping(value = "")
-    public ResponseEntity<List<Device>> getAllDevices(){
+    public ResponseEntity<List<Device>> getAllDevices() {
         List<Device> devices = deviceService.getAll();
 
-        if (devices.isEmpty()){
+        if (devices.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
