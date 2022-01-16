@@ -1,6 +1,6 @@
 #Rest Gps.
 ---
-##Preparation
+####Preparation
 
 To check the operation of applications, you need to install BD MySQL.
 Having opened the source code in IDEA and connected the database, 
@@ -11,7 +11,7 @@ and populate the table with test data as well.
 The database password is in `application.properties`
 It can be changed to whatever you need.
 ---
-###The following methods are available in the service.
+#####The following methods are available in the service.
 
 - Adding a new device using the POST method
     * In the body of the request, you need to pass JSON 
